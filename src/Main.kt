@@ -60,3 +60,33 @@ fun a(str: String) {
 fun b(function: (String) -> Unit) {
     function("b가 호출됨")
 }
+
+// object는 싱글톤 패턴 - 하나만 생성해서 공통으로 사용할 객체
+object Counter {
+    var count = 0
+
+    fun countUp() {
+        count++;
+    }
+
+    fun clear() {
+        count = 0
+    }
+
+}
+
+// class 안에도 object를 생성 가능
+class FoodPoll(val name: String) {
+
+    companion object {
+        var total = 0
+    }
+
+    var count = 0
+
+    fun vote() {
+        total++;
+        count++;
+    }
+
+}
